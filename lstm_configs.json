@@ -1,0 +1,143 @@
+{
+  "models": [
+        {
+            "name": "Simple LSTM",
+            "input_shape": [30, 4],
+            "layers": [
+                {"type": "LSTM", "units": 50, "dropout": 0.2}
+            ],
+            "output_units": 1,
+            "output_activation": "linear",
+            "optimizer": "adam",
+            "learning_rate": 0.001,
+            "loss": "mean_squared_error",
+            "metrics": ["mae"]
+        },
+        {
+            "name": "Deep LSTM",
+            "input_shape": [30, 4],
+            "layers": [
+                {"type": "LSTM", "units": 50, "dropout": 0.2},
+                {"type": "LSTM", "units": 30, "dropout": 0.2, "return_sequences": true},
+                {"type": "LSTM", "units": 20, "dropout": 0.2}
+            ],
+            "output_units": 1,
+            "output_activation": "linear",
+            "optimizer": "adam",
+            "learning_rate": 0.001,
+            "loss": "mean_squared_error",
+            "metrics": ["mae"]
+        },
+    {
+      "name": "Simple LSTM",
+      "input_shape": [
+        30,
+        4
+      ],
+      "layers": [
+        {
+          "type": "LSTM",
+          "units": 50,
+          "dropout": 0.2
+        }
+      ],
+      "output_units": 1,
+      "output_activation": "linear",
+      "optimizer": "adam",
+      "learning_rate": 0.001,
+      "loss": "mean_squared_error",
+      "metrics": [
+        "mae"
+      ]
+    },
+    {
+      "name": "Optimized Simple LSTM",
+      "input_shape": [
+        30,
+        4
+      ],
+      "layers": [
+        {
+          "type": "LSTM",
+          "units": 64,
+          "dropout": 0.1
+        }
+      ],
+      "output_units": 1,
+      "output_activation": "linear",
+      "optimizer": "adam",
+      "learning_rate": 0.001,
+      "loss": "mean_squared_error",
+      "metrics": [
+        "mae",
+        "mape"
+      ]
+    },
+    {
+      "name": "Optimized Deep LSTM",
+      "input_shape": [
+        30,
+        4
+      ],
+      "layers": [
+        {
+          "type": "LSTM",
+          "units": 64,
+          "dropout": 0.1,
+          "return_sequences": true
+        },
+        {
+          "type": "LSTM",
+          "units": 32,
+          "dropout": 0.1,
+          "return_sequences": true
+        },
+        {
+          "type": "LSTM",
+          "units": 32,
+          "dropout": 0.1,
+          "return_sequences": false
+        }
+      ],
+      "output_units": 1,
+      "output_activation": "linear",
+      "optimizer": "adam",
+      "learning_rate": 0.001,
+      "loss": "mean_squared_error",
+      "metrics": [
+        "mae",
+        "mape"
+      ]
+    },
+    {
+      "name": "Optimized Bidirectional LSTM",
+      "input_shape": [
+        30,
+        4
+      ],
+      "layers": [
+        {
+          "type": "BiLSTM",
+          "units": 128,
+          "dropout": 0.2,
+          "return_sequences": true
+        },
+        {
+          "type": "BiLSTM",
+          "units": 64,
+          "dropout": 0.2,
+          "return_sequences": false
+        }
+      ],
+      "output_units": 1,
+      "output_activation": "linear",
+      "optimizer": "rmsprop",
+      "learning_rate": 0.001,
+      "loss": "mean_squared_error",
+      "metrics": [
+        "mae",
+        "mape"
+      ]
+    }
+  ]
+}
