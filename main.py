@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 if __name__ == "__main__":
     # Загрузка и предобработка данных
-    X_train, y_train, X_val, y_val, X_test, y_test, test_dates = create_data("data.json")
+    X_train, y_train, X_val, y_val, X_test, y_test, test_dates = create_data("data.json",12)
 
 
     # Чтение конфигураций LSTM сетей
